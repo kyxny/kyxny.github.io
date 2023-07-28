@@ -9,6 +9,68 @@ import fs from "fs";
 import path from "path";
 import request from "request";
 const z = console.info;
+const URL = "https://www.sxdkcapp.com/sxd2023/";
+const dir = "./sxd2023/";
+let css = {},
+  js = {};
+js.h = {
+  8: "694c257d",
+  25: "918e38ed",
+  104: "fee8a307",
+  149: "26a9a802",
+  385: "386d63f1",
+  431: "cc2e4724",
+  510: "90d0aea2",
+  512: "73bb87d5",
+  704: "72c19fa2",
+  721: "cf12fef3",
+  826: "0a84e279",
+  834: "f54662b6",
+  917: "e49a9a0e",
+  991: "751ec182",
+};
+
+const pageIndex = {
+  8: "mobile",
+  25: "MobileVideo",
+  104: "MobileVideoList",
+  431: "MobileNewsList",
+  510: "MobilePhilosophy",
+  512: "MobileStructure",
+  704: "MobileNews",
+  721: "MobileContact",
+  826: "index",
+  834: "MobileRescue",
+  917: "MobilePartner",
+  991: "MobileHonour",
+};
+css.f = function (t) {
+  return (
+    "css/" +
+    pageIndex[t] +
+    "." +
+    {
+      8: "72c01d10",
+      25: "38f34f79",
+      104: "7cea77f4",
+      431: "1e56ad0f",
+      511: "e79d42f7",
+      512: "5ce2ee4e",
+      704: "32e6fb04",
+      721: "5bb3545d",
+      826: "22921d40",
+      834: "59febbaf",
+      917: "6fa1ee24",
+      991: "677b26ff",
+    }[t] +
+    ".css"
+  );
+};
+js.f = function (t) {
+  let pre = pageIndex[t];
+  return "js/" + (pre ? pre : t) + "." + js.h[t] + ".js";
+};
+
 function getfileByUrl(url, fileName, dir) {
   console.log("------------------------------------------------");
   console.log(url);
@@ -28,27 +90,16 @@ function getfileByUrl(url, fileName, dir) {
       z(err);
     });
 }
-const jsLinks = {
-  8: "mobile",
-  25: "MobileVideo",
-  104: "MobileVideoList",
-  431: "MobileNewsList",
-  510: "MobilePhilosophy",
-  512: "MobileStructure",
-  704: "MobileNews",
-  721: "MobileContact",
-  826: "index",
-  834: "MobileRescue",
-  917: "MobilePartner",
-  991: "MobileHonour",
-};
 //循环下载
-for (let i in jsLinks) {
-  let item = js(i);
-  let picUrl = "https://www.sxdkcapp.com/sxd2023/" + item;
-  let dir = "./sxd2023/";
+for (let i in js.h) {
+  let item = js.f(i);
   makeDir(dir + item);
-  getfileByUrl(picUrl, item, dir);
+  // getfileByUrl(URL + item, item, dir);
+}
+for (let i in pageIndex) {
+  let item = css.f(i);
+  makeDir(dir + item);
+  // getfileByUrl(URL + item, item, dir);
 }
 function makeDir(dirpath) {
   if (!fs.existsSync(dirpath)) {
@@ -65,8 +116,8 @@ function makeDir(dirpath) {
       }
       if (!fs.existsSync(pathtmp)) {
         z("pathtmp", pathtmp);
-        if (pathtmp != "sxd2023" && pathtmp != "sxd2023\\js") {
-          fs.writeFileSync(pathtmp, "");
+        if (pathtmp != "sxd2023" && pathtmp != "sxd2023\\js" && pathtmp != "sxd2023\\css") {
+          // fs.writeFileSync(pathtmp, "");
           return false;
         } else if (!fs.mkdirSync(pathtmp)) {
           return false;
@@ -77,29 +128,4 @@ function makeDir(dirpath) {
     //     deleteFolderFiles(dirpath);
   }
   return true;
-}
-
-function js(t) {
-  return (
-    "js/" +
-    jsLinks[t] +
-    "." +
-    {
-      8: "694c257d",
-      25: "918e38ed",
-      104: "fee8a307",
-      149: "26a9a802",
-      385: "386d63f1",
-      431: "cc2e4724",
-      510: "90d0aea2",
-      512: "73bb87d5",
-      704: "72c19fa2",
-      721: "cf12fef3",
-      826: "0a84e279",
-      834: "f54662b6",
-      917: "e49a9a0e",
-      991: "751ec182",
-    }[t] +
-    ".js"
-  );
 }
