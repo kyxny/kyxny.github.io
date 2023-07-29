@@ -1119,7 +1119,11 @@
         navigator.userAgent
           .toLowerCase()
           .match(/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i)
-      ue && (window.location.href = '/#/mobile')
+      if (ue) {
+        window.navigate = window.location.href.replace('#/index', '#/mobile')
+        console.log('isMobile', ue)
+        console.log('href', window.location.href)
+      }
       let xe = class extends R.w3 {
         constructor(...i) {
           super(...i),
