@@ -2345,15 +2345,15 @@
     },
     3226: function (t, e, n) {
       'use strict'
-      t.exports = n.p + 'img/qrcode1.c3051e1f.png'
+      t.exports = n.p + 'img/qrcode1.png'
     },
     4127: function (t, e, n) {
       'use strict'
-      t.exports = n.p + 'img/qrcode2.2510d648.jpg'
+      t.exports = n.p + 'img/applet.jfif'
     },
     7887: function (t, e, n) {
       'use strict'
-      t.exports = n.p + 'img/qrcode3.df578ae8.jpg'
+      t.exports = n.p + 'img/qrcode3.jpg'
     },
   },
 ])

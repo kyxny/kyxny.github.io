@@ -32,7 +32,7 @@
             w +
             '" data-v-6708f152></div><div class="text-box" data-v-6708f152>司机端小程序</div></div><div class="qrcode-item" data-v-6708f152><div class="image-box" data-v-6708f152><img src="' +
             t +
-            '" data-v-6708f152></div><div class="text-box" data-v-6708f152>卡友公众号</div></div></div><div class="bottom-box" data-v-6708f152><div class="bottom-item" data-v-6708f152>卡友新能源（台州）有限公司</div><div class="bottom-item" data-v-6708f152>修修数字科技（江苏）有限公司</div><div class="bottom-item" data-v-6708f152>京ICP备19022330号</div></div>',
+            '" data-v-6708f152></div><div class="text-box" data-v-6708f152>卡友公众号</div></div></div><div class="bottom-box" data-v-6708f152><div class="bottom-item" data-v-6708f152>卡友新能源（台州）有限公司</div><div class="bottom-item" data-v-6708f152>金泰轮</div><div class="bottom-item" data-v-6708f152>京ICP备19022330号</div></div>',
           3
         )
       function R(A, I, g, i, Q, c) {

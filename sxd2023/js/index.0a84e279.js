@@ -170,7 +170,7 @@
       const w = (i) => ((0, c.dD)('data-v-59db6af2'), (i = i()), (0, c.Cn)(), i),
         k = { class: 'footer-box' },
         p = w(() => (0, c._)('div', null, '卡友新能源（台州）有限公司', -1)),
-        j = w(() => (0, c._)('div', null, '修修数字科技（江苏）有限公司', -1))
+        j = w(() => (0, c._)('div', null, '金泰轮', -1))
       function O(i, t, e, a, A, s) {
         return (
           (0, c.wg)(),
