@@ -77,29 +77,29 @@ function getfileByUrl(url, fileName, dir) {
   console.log(fileName);
   console.log(dir);
   let stream = fs.createWriteStream(path.join(dir, fileName));
-  //   request(url).pipe(stream).on("close", function (err) {
-  //       console.log("文件" + fileName + "下载完毕");
-  //   });
-  fetch(url)
-    .then((res) => z(res.text()))
-    .catch((err) => {
-      z(err);
-    })
-    .then((json) => console.log(json))
-    .catch((err) => {
-      z(err);
+    request(url).pipe(stream).on("close", function (err) {
+        console.log("文件" + fileName + "下载完毕");
     });
+  // fetch(url)
+  //   .then((res) => z(z(res)))
+  //   .catch((err) => {
+  //     z(err);
+  //   })
+  //   .then((json) => console.log(json))
+  //   .catch((err) => {
+  //     z(err);
+  //   });
 }
 //循环下载
 for (let i in js.h) {
   let item = js.f(i);
   makeDir(dir + item);
-  // getfileByUrl(URL + item, item, dir);
+  getfileByUrl(URL + item, item, dir);
 }
 for (let i in pageIndex) {
   let item = css.f(i);
   makeDir(dir + item);
-  // getfileByUrl(URL + item, item, dir);
+  getfileByUrl(URL + item, item, dir);
 }
 function makeDir(dirpath) {
   if (!fs.existsSync(dirpath)) {

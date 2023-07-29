@@ -1,0 +1,24 @@
+{
+  "name": "kyxny.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dump.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyxny/kyxny.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyxny/kyxny.github.io/issues"
+  },
+  "homepage": "https://github.com/kyxny/kyxny.github.io#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "request": "^2.88.2"
+  }
+}
