@@ -8,4 +8,4 @@ if (isMobile) {
 } else {
   window.location = './index.html#/index'
 }
-console.log('isMobile', isMobile, window.location.href)
+console.log({isMobile,href: window.location.href,ky})
